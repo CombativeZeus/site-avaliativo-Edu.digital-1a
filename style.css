@@ -1,0 +1,109 @@
+/* --- CONFIGURAÇÕES GERAIS E VARIÁVEIS --- */
+:root {
+    --primary: #ef5350;
+    --secondary: #3761a8;
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --white: #ffffff;
+    --radius: 12px;
+    --spacing: 20px;
+    --transition: all 0.3s ease;
+    --font-size-base: 16px;
+}
+
+/* --- MODO ALTO CONTRASTE --- */
+body.high-contrast {
+    --bg-color: #000;
+    --text-color: #fff;
+    --primary: #ffff00;
+    --secondary: #00ffff;
+    --white: #000;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    transition: var(--transition);
+}
+
+/* --- ACESSIBILIDADE --- */
+.accessibility-bar {
+    background: #222;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.accessibility-bar button {
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: var(--radius);
+    border: none;
+}
+
+/* --- LAYOUT GRID (MODIFICAR AQUI) --- */
+.grid-container {
+    display: grid;
+    gap: var(--spacing);
+    padding: var(--spacing);
+    /* Mobile-First: 1 coluna */
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .grid-container {
+        /* Desktop: 3 colunas */
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* --- COMPONENTES --- */
+.pokemon-card {
+    background: var(--white);
+    padding: var(--spacing);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    border: 2px solid var(--primary);
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    padding: 40px;
+    background: var(--secondary);
+    color: white;
+    text-align: center;
+}
+
+/* --- ANIMAÇÕES --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
