@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéWorld - Explore o Universo Pokémon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="accessibility-bar" role="toolbar" aria-label="Ferramentas de acessibilidade">
+        <button onclick="changeFontSize('increase')" aria-label="Aumentar fonte">A+</button>
+        <button onclick="changeFontSize('decrease')" aria-label="Diminuir fonte">A-</button>
+        <button onclick="toggleContrast()" aria-label="Alternar Alto Contraste">Alto Contraste</button>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">PokéWorld</div>
+            <ul>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#info">Informações</a></li>
+            </ul>
+        </nav>
+        <section class="hero">
+            <h1>Descubra o Treinador em Você</h1>
+            <p>Explore as espécies mais famosas e aprenda sobre suas habilidades.</p>
+        </section>
+    </header>
+
+    <main>
+        <section id="galeria" class="reveal">
+            <h2>Pokémons em Destaque</h2>
+            <div id="pokemon-grid" class="grid-container" aria-live="polite">
+                </div>
+        </section>
+
+        <section class="carousel-section reveal">
+            <h2>Regiões do Mundo Pokémon</h2>
+            <div class="carousel" role="region" aria-roledescription="carousel">
+                <div class="carousel-inner" id="carousel-content">
+                    </div>
+                <button class="prev" onclick="moveCarousel(-1)" aria-label="Slide anterior">❮</button>
+                <button class="next" onclick="moveCarousel(1)" aria-label="Próximo slide">❯</button>
+            </div>
+        </section>
+
+        <section id="info" class="reveal">
+            <h2>Perguntas Frequentes</h2>
+            <div id="accordion-container">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 PokéWorld - Desenvolvido para todos os mestres Pokémon.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
